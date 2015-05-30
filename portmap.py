@@ -1,9 +1,12 @@
 #! /usr/bin/python3
 
 from socket import *
+import os
 import sys, getopt,time
 
 #Create the log file
+path = "portmap_logs/"
+if not os.path.exists(path): os.makedirs(path)
 fileName = "portmap_logs/OpenPorts-"+time.strftime("%d-%m-%Y")+"@"+time.strftime("%H:%M:%S")+".log"
 logFile = open(fileName, "w+")
 
