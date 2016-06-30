@@ -1,5 +1,13 @@
 # Python Port Checker
 
+A basic port checker written in python. 
+
+Can check either a single port or a range of ports, with a set timeout. Works by trying to open a socket on the desired port, if this fails the port is closed / is open with no application using it. Perhaps not the most elegant solution but it works.
+
+# Usage 
+
+To use run `python3 portmap.py` with the desired arguments. With no arguements will print help text.
+
 # List of possible parameters
 
 |Short |    Long    |  Arguments | Explanation
