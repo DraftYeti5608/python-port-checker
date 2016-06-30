@@ -16,6 +16,7 @@ logFile = open(fileName, "w+")
 
 
 # Try to open a socket connected to the given port and host.
+# There's probably a more elegant solution but this one works.
 def checkPort(hostname, port, timeout=2):
     try:
         sock = socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None)
@@ -40,6 +41,7 @@ def printArgs():
                   Specify a timeout in seconds per test")
 
 
+# Parse command line arguments and check the relevant ports.
 def main(argv):
     # Useful variables
     port = 0
@@ -83,5 +85,6 @@ def main(argv):
     else:
         for cPort in range(rangeStart, rangeEnd + 1):
             checkPort(host, cPort, timeout)
+# Start the main function with command line arguments
 if __name__ == "__main__":
     main(sys.argv[1:])
